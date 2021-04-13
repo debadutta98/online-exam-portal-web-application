@@ -7,4 +7,4 @@ for now google and facebook authentication is not going to work because we did n
 
 This application is live on heroku 
 
-you can see it by going to this link
+you can see it by going to this [link](https://quiz-dev-vik.herokuapp.com)
