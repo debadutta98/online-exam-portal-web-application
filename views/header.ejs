@@ -1,0 +1,65 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/css/header.css" rel = "stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+</head>
+<body>
+ <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+	<a href="#" class="navbar-brand" ><i class="fa fa-heart"></i>Welcome<b class="abc">Teacher</b></a>  		
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+		 <div class="navbar-nav ml-auto">
+			 <div class="nav-item dropdown">
+			 	<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
+        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar" alt="panda"> <span class="username">Username</span></a>
+				<div class="dropdown-menu">
+					<a href="/teacher/profile" class="dropdown-item" id="profile"><i class="far fa-user"></i> Profile</a>
+					<a href="/teacher/settings" class="dropdown-item" id="settings"><i class="fas fa-user-cog"></i> Settings</a>
+					<div class="divider dropdown-divider"></div>
+					<a href="/teacher/logout" class="dropdown-item" id="logout"><i class="material-icons">&#xE8AC;</i> Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+$('.dropdown-toggle').dropdown();
+</script>
+<script>
+ function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for(var i = 0; i <ca.length; i++) {
+   var c = ca[i];
+ while (c.charAt(0) == ' ') {
+    c = c.substring(1);
+ }
+   if (c.indexOf(name) == 0) {
+    return c.substring(name.length, c.length);
+  }
+}
+return "";
+}
+var str=getCookie('profileinfo')
+var json=JSON.parse(str);
+$('.username').text(json.name);
+$('.avatar').attr("src",json.profileimage);
+var routes=window.location.href.split('/');
+if(routes[3].includes('student'))
+{
+  $('.abc').text('Student');
+  $('#profile').attr('href','/student/profile');
+  $('#settings').attr('href','/student/settings');
+  $('#logout').attr('href','/student/logout');
+}
+
+</script>
+</body>
+</html>

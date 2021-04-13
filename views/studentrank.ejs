@@ -1,0 +1,84 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  body
+  {
+  background-color:lightgray;
+  }
+  </style>
+</head>
+
+<body class="container">
+  <table class="table table-hover">
+    <thead class="thead-lightblue">
+      <tr>
+        <th scope="col">Sno</th>
+        <th scope="col">Name</th>
+        <th scope="col">FullMark</th>
+        <th scope="col">Current Mark</th>
+        <th scope="col">Current Rank</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var rank = <%-rankcard%>
+      if (typeof(rank) !== 'undefined') {
+        var stdrank;
+        if (typeof(rank) === 'string') {
+          stdrank = JSON.parse(rank);
+        }
+        if (typeof(rank) === 'object') {
+          stdrank = rank;
+        }
+        if (typeof(stdrank) !== 'undefined') {
+          if (stdrank > 0) {
+            for (var i = 0; i < stdrank.length; i++) {
+              for (var j = i + 1; j < stdrank.length; j++) {
+                if (stdrank[i].stdmark <= stdrank[j].stdmark) {
+                  var temp = stdrank[i];
+                  stdrank[i] = stdrank[j];
+                  stdrank[j] = temp;
+                }
+              }
+            }
+          }
+          var count=1;
+          setRank(1,stdrank[0].stdname,stdrank[0].stdmark,<%=fullmark%>,count);
+          for (var k = 1; k < stdrank.length; k++)
+          {
+            setRank(k+1,stdrank[k].stdname,stdrank[k].stdmark,<%=fullmark%>,count);
+            if(stdrank[k-1]==stdrank[k])
+            {
+              //this loop be use in future for time interval perpose
+            }
+            else if(stdrank[k-1]>stdrank[k])
+            {
+              count++;
+            }
+          }
+
+        }
+      }
+      function setRank(sl,sname,smark,fmark,rank)
+      {
+        $('tbody').append(`
+                <tr>
+                <th scope="row">${sl}</th>
+                <td>${sname}</td>
+                <td>${fmark}</td>
+                <td>${smark}</td>
+                <td>${rank}</td>
+              </tr>`);
+      }
+  </script>
+</body>
+
+</html>

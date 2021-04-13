@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <style type="text/css">
+    .fas {
+      color: #00bfff !important;
+      margin-top:18px;
+      margin-left:10px;
+    }
+  </style>
+  <title>Quiz Page</title>
+  <!-- style.css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/secreat.css" type="text/css">
+  <script>
+    var quiz = <%-jsonobj %>
+  </script>
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false"
+  onkeydown="if ((arguments[0] || window.event).ctrlKey) return false">
+  <!--oncontextmenu="return false" onselectstart="return false"
+    onkeydown="if ((arguments[0] || window.event).ctrlKey) return false"-->
+  <div class="wrapper">
+    <div class='initial text-center'>
+      <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_46kycmnm.json" mode="bounce" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+      <button type="button" class="btn btn-success" onclick="openFullscreen();">Start Now</button>
+    </div>
+    <div class="quiz" style="display:none;">
+
+      <div class="quiz_header">
+        <div class="quiz_user">
+          <h4><span class="name">1/10</span></h4>
+
+        </div>
+
+        <div class="quiz_timer">
+          <span class="time">00:00</span>
+        </div>
+      </div>
+      <div class="quiz_body">
+        <div id="questions">
+
+
+
+        </div>
+        <div class="row">
+
+          <button class="btn-next" onclick="next()">Next Question</button>
+          <div id='information' style="display:none;"><i class="fas fa-info-circle fa-lg"></i>&nbsp;&nbsp;One or more option is correct</div>
+
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <img src="" class="imagepreview" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+  <script src="/js/secreat.js" type="text/javascript"></script>
+
+</body>
+
+</html>

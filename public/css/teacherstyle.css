@@ -1,0 +1,81 @@
+
+.main {
+   width: 50%;
+   margin: 50px auto;
+}
+ .has-search .form-control {
+   padding-left: 2.375rem;
+}
+.has-search .form-control-feedback {
+   position: absolute;
+   z-index: 2;
+   display: block;
+   width: 2.375rem;
+   height: 2.375rem;
+   line-height: 2.375rem;
+   text-align: center;
+   pointer-events: none;
+   color: #aaa;
+}
+ 
+.fa:hover{
+color:white;
+cursor: pointer;
+}
+.content {
+
+       text-align: center;
+   }
+ .table-responsive {height:300px;}
+.my-custom-scrollbar {
+position: relative;
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+th{
+position:-webkit-sticky;
+position: sticky;
+top: 0;
+z-index: 2;
+height:40px;
+ 
+
+}
+
+ @media (max-width: 400px)
+{
+
+
+}
+
+@media (max-width: 600px)
+{
+  .main
+  {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .content
+  {
+  text-align:center;
+
+  }
+
+
+
+
+}
+@media (max-width: 990px)
+{
+  .main
+  {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+}

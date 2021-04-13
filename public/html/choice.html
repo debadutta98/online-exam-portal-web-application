@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/index.css">
+     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+  </head>
+  <body>
+    <div style="display: flex;
+  justify-content: center;
+  margin-top:5%;
+  align-items: center;">
+    <div class="card" style="width: 60rem;">
+  <div class="card-body">
+    <div style="display:inline">
+      <!--Teacher-->
+<div class="first-box" id="slidedown" style="background-color:#949cdf; float:left;width:50%; ">
+<div style="background-color:white;"><span style="font-family:georgia,garamond,serif;font-size:18px;color:cornflowerblue;font-weight:bold;float:right; margin-right:0px;">I WANT</span>
+<div style="background-color:white;">
+<img src="/img/teacher.jpg" width="100%" height="300px" alt="teacher">
+</div>
+<!--Teacher signUp button-->
+<button href="#" class="btn btn-success btn-lg" style="margin-left:36%;;padding:8px;margin-top:70px;border-radius:20px;height:40px;width:100px;" onclick="location.href='/choice/teacher'"><h4>Teacher</h4></button></div>
+  </div>
+  <!--student-->
+<div style="margin-left:50%;" class="second-box" id="slideup">
+  <!--dskada-->
+  <span style="font-family:georgia,garamond,serif;font-size:18px;color:cornflowerblue;font-weight:bold;float:left;margin-left:0px;margin-top:3px;">TO</span>
+<img src="/img/student.png" width="100%" height="300px" alt="student">
+<!--Student signUp button-->
+<button href="#" class="btn btn-success btn-lg" style="margin-left:36%;;padding:8px;margin-top:70px;border-radius:20px;height:40px;width:100px;" onclick="location.href='/choice/student'"><h4>Student</h4></button>
+  <!--dasdma-->
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+$(".second-box").fadeIn()
+.css({top:500,position:'absolute',opacity:0.0})
+.animate({top:10,opacity:1}, 800, function() {
+});
+$(".first-box").fadeIn()
+.css({bottom:500,position:'relative',opacity:0.0})
+.animate({top:1,opacity:1}, 800, function() {
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>repl.it</title>
+    <link href="/css/createquiz.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+body
+{
+background:lightgray;
+}
+</style>
+
+  </head>
+  <body>
+
+<!--another section-->
+    <div class="card justify-content-center" id="another-card">
+  <div class="card-header text-white" style="background-color:gray">
+ <div class="text-center text-white bg-dark" style="display:inline;"> <h4><span>Create Question No 1.</span>&nbsp;&nbsp;&nbsp; <label for="exampleInputEmail1">marks</label>
+    <input type="text" class="form-control" id="marks" aria-describedby="emailHelp" style="width:100px;"></h4>
+  
+
+   <div style="float:right;margin-top:-2rem;display:none;" id="delete-card"><i class="fa fa-trash"></i></div>
+
+  <div style="float:left;margin-top:-2rem;display:none;" id="save-data"><i class="fa fa-upload"></i></div>
+ </div>
+
+  </div>
+  <div class="card-body" style="background-color:#6699cc">
+
+    <div style="display:inline" >
+      <input type="text" id="fname" name="firstname" placeholder="Enter question"style="border: 2px solid lightcoral">
+      <button type="button" onclick="imageUploadforquestion()">
+         <i class="abc fa fa-image fa-lg"></i>
+        </button></div>
+    <img  id="question-image-set" src="" width="100px" height="100px" style="display:none;">
+    <div class="options"><h6> Options</h6> </div>
+    <br>
+    <!--add options-->
+      <button class="optionfield" id="add-options" type="button">
+      <i class="fa fa-plus"></i>
+      </button>
+<!--delete options-->
+    <button class="optionfield" id="delete-options" type="button">
+      <i class="fa fa-trash"></i>
+      </button>
+      <div class="addoption">
+
+      </div>
+  </div>
+</div>
+<!--whole card-->
+<div class="contaner">
+  <nav aria-label="blog post pages">
+       <ul class="pagination justify-content-center">
+    <li class="page-item" id="prev">
+      <button class="page-link" aria-label="Previous" id="Previous-page">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </button>
+    </li>
+    <!--PAGINATION-->
+    <li class="page-item" id="question1">
+      <button class="page-link" id="question-no1" onclick="toquestion(1)">1</button>
+      </li>
+
+    <li class="page-item" id="next">
+      <button class="page-link" aria-label="Next" id="next-page">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+  </div>
+<button type="button" class="float">
+<i class="fa fa-plus"></i>
+</button>
+<div class="text-center justify-content-center">
+<button  class="btn btn-success btn-lg" style="border-radius:20px;height:45px;width:150px;" type="button" id="submit-quiz">Submit</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/quizcreate.js"></script>
+  </body>
+</html>

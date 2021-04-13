@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<style type="text/css">
+.line-1{
+    position: relative;
+    top: 50%;
+    width: 30em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 28.5em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+</style>
+<script type="text/javascript">
+var information=<%- studentinfo %>
+</script>
+  </head>
+  <body style="background-color:#ff6666">
+    <div style="margin-top:100px;margin-left:27%;">
+    <img src="https://img.icons8.com/bubbles/100/000000/certificate.png"/>
+    </div>
+    <div style="color:white; font-family: 'Lato', sans-serif;">
+      <div style="margin-left:38%; margin-top:-80px; padding-left:40px;">
+<span id="mark-info">you secure 30 marks outof 100</span>
+<br>
+<br>
+<span id="mark-percentage">percentage: 30% </span>
+</div>
+<p style="margin-top:150px;text-align:center;"
+ class="line-1 anim-typewriter">
+"Failure isn't fatal, but failure to change might be" - John Wooden
+</p>
+    </div>
+    <script>
+    var infostd;
+    if(typeof(information)==='string')
+    {
+        infostd=JSON.parse(information);
+    }
+    if(typeof(information)==='object')
+    {
+       infostd=information;
+    }
+    if(typeof(infostd)!=='undefined' && infostd!==null)
+    {
+    document.getElementById('mark-info').innerHTML=`you secure ${infostd.stdmark} marks outof ${infostd.mark}`
+    document.getElementById('mark-percentage').innerHTML=`percentage: ${infostd.percentage}%`
+  }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="/css/signup.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  body{
+     background-image: linear-gradient(to right,#e7d9ea,#ffcda3);
+  }
+  </style>
+  </head>
+  <body>
+    <div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form method="post">
+                <h3>Sign Up</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email Address *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Name *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="city" class="form-control" placeholder="City *" value="" />
+                        </div>
+                         
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="school" class="form-control" placeholder="School *" value="" />
+                        </div>
+                          <div class="form-group">
+                            <input type="text" name="password" class="form-control" placeholder="************" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="form-control" placeholder="Phone Number *" value="" />
+                        </div>
+                         <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Sign Up Now" />
+                        </div>
+                    </div>
+                      
+                </div>
+                  
+            </form>
+</div>
+   <script>
+      var route=window.location.href.split('/');
+      if(route[route.length-1]==='newstudent')
+      {
+ $('form').attr('action','/signup/student')
+      }
+      else if(route[route.length-1]==='newteacher')
+      {
+        $('form').attr('action','/signup/teacher')
+      }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+
+
+*{padding:0;margin:0;}
+
+body{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:1.2rem;
+ background-color:#CCC;
+}
+.options
+{
+margin-top:2.0rem;
+margin-left: 2.2rem;
+margin-bottom: 0rem;
+}
+.answer{
+ text-align: right;
+ margin-top:10px;
+margin-right: 30px;
+margin-bottom: 0px;
+}
+.pagination
+{
+ margin-top: 20px;
+}
+
+
+
+.float{
+ position:fixed;
+ width:60px;
+ height:60px;
+ bottom:40px;
+ right:40px;
+ background-color:#0C9;
+ color:#FFF;
+ border-radius:50px;
+ text-align:center;
+ box-shadow: 2px 2px 3px #999;
+}
+
+.left-pannel .left{
+ background-color:rgb(204, 0, 78);
+ position: fixed;
+ align-items: left;
+ border-radius: 50px;
+ text-align: center;
+ color: #FFF;
+ width:60px;
+ height:60px;
+ bottom: 40px;
+ left: 40px;
+ box-shadow: 2px 2px 3px #999;
+
+}
+
+.optionfield{
+ position: relative;
+ width:40px;
+ height:40px;
+ bottom:5px;
+ left:20px;
+ border: none;
+ outline: none;
+ background-color:#87CEFA;
+ color:#FFF;
+ border-radius:50px;
+ text-align:center;
+ box-shadow: 2px 2px 3px rgb(109, 11, 101);
+}
+.optionfield:hover{
+ position: relative;
+ width:40px;
+ height:40px;
+ bottom:5px;
+ left:20px;
+ border: none;
+ outline: none;
+ background-color:#B0C4DE;
+ color:#FFF;
+ border-radius:50px;
+ text-align:center;
+ box-shadow: 2px 2px 3px rgb(109, 11, 101);
+}
+.answerfield{
+ position: relative;
+ width:40px;
+ height:40px;
+ bottom:5px;
+ left:600px;
+ border: none;
+ outline: none;
+ background-color:#87CEFA;
+ color:#FFF;
+ border-radius:50px;
+ text-align:center;
+ box-shadow: 2px 2px 3px rgb(109, 11, 101);
+}
+.my-float{
+ margin-top:22px;
+}
+.card
+{
+  margin-left:14.5rem;
+  margin-right:14.5rem;
+  margin-top:2rem;
+  background-color: #396461;
+}
+input[type=text]{
+ outline: none;
+ width: 90%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+.myButton{
+   padding: 10px;
+   cursor:pointer;
+   border:none;
+   width:25px;
+   height:25px;
+}
+
+::placeholder
+{
+
+opacity: 1;
+font-size:18px;
+font-family:Cursive;
+}
+.abc
+{
+  float: left;
+}
+#delete-card
+{
+cursor: pointer;
+}
+#save-data
+{
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px)
+{
+  .card
+  {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+}
+@media (max-width: 990px)
+{
+  .card
+  {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+}
+.modal-center {
+   display:table;
+   height: 100%;
+   width: 100%;
+}
+.modal-content {height:inherit;margin: 0 auto;}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <style>
+      .table-content {
+       width: 450px;
+       margin: 50px auto;
+       text-align: center;
+
+   }
+
+   td {
+       width: 500px;
+   }
+   #datetimepicker{
+     cursor: pointer;
+   }
+      </style>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+<style>
+ body
+{
+background:lightgray;
+}
+.table{
+border:4px solid red;
+border-radius:25px;
+
+}
+</style>
+ 
+  </head>
+  <body>
+     <div class="table-content">
+       <form method="post" action="/teacher/createquiz/upload/submit">
+        <table class="table table-bordered table-responsive table-striped " id="table-list">
+            <thead class="table-dark">
+                <tr>
+                    <td><h4>Type All Quiz Related Information</h4></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="align:center">
+                    <td>
+                      <section class="col-sm-15">
+                    <div class="input-group date" id="datetimepicker">
+                    <input type="text" placeholder="Quiz start time" class="form-control" name="quizstarttime" id="start">
+                    <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span></div></div>
+                    </section>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                      <section class="col-sm-15">
+                    <div class="input-group date" id="datetimepicker1">
+                    <input type="text" placeholder="Quiz end time" class="form-control" name="quizendtime" id="end">
+                    <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span></div></div>
+                    </section>
+                    </td>
+                </tr>
+                <tr>
+                  <td> <input type="text" class="form-control" id="interval" placeholder="Test Duration" name="quizduration"></td>
+                </tr>
+                <tr>
+                    <td> <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Quiz Name" name="quizname"></td>
+
+                </tr>
+
+                <tr>
+                    <td><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Quiz Mark" name="quizmark"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Maximum Student" name="quizmaxstudent"</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-success" id="add"><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload </button>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+  $('#datetimepicker').datetimepicker();
+  $('#datetimepicker1').datetimepicker();
+  $("#datetimepicker").on("dp.change", function (e) {
+    if($('#end').val()!==""){
+      var st=moment($('#start').val());
+      var en=moment($('#end').val());
+      en.subtract(st);
+
+var seconds = moment.duration(en).seconds();
+var minutes = moment.duration(en).minutes();
+var hours   = moment.duration(en).hours();
+var days    = moment.duration(en).days();
+if(seconds>=0 && minutes>=0 && hours>=0 && days>=0)
+  $('#interval').val(`${days}:${hours}:${minutes}:${seconds}`)
+else
+alert('Please enter valid date')
+}
+       });
+    $('#datetimepicker1').on("dp.change", function (e) {
+      if($('#start').val()!==""){
+        var st=moment($('#start').val());
+        var en=moment($('#end').val());
+        en.subtract(st);
+  var seconds = moment.duration(en).seconds();
+  var minutes = moment.duration(en).minutes();
+  var hours   = moment.duration(en).hours();
+  var days    = moment.duration(en).days();
+if(seconds>=0 && minutes>=0 && hours>=0 && days>=0)
+  $('#interval').val(`${days}:${hours}:${minutes}:${seconds}`)
+else
+alert('Please enter valid date')
+  }
+         });
+});
+    </script>
+  </body>
+</html>

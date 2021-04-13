@@ -1,0 +1,326 @@
+
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css" type="text/css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style type="text/css">
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+.form-row
+{
+margin:10px;
+padding:10px;
+float: middle;
+}
+ 
+.btn1
+{
+border: none;
+outline: none;
+height: 40px;
+width: 100%;
+background-color: black;
+color: white;
+border-radius: 4px;
+font-weight: bold;
+}
+.btn1:hover
+{
+background: white;
+border: 1px solid;
+color: black;
+}
+.form-control
+{
+width: 100%;
+height:40px;
+color: white;
+border-radius: 4px;
+font-weight: bold;
+}
+@media only screen and (min-width:400px)
+{
+.btn1
+{
+border: none;
+outline: none;
+height: 40px;
+width: 50%;
+background-color: black;
+color: white;
+border-radius: 4px;
+font-weight: bold;
+}
+
+.form-control
+{
+width: 50%;
+height:40px;
+color: white;
+border-radius: 4px;
+font-weight: bold;
+}
+.button1
+{
+  margin-left:50px;
+  margin-top:0px;
+
+}
+
+}
+@media only screen and (max-width:800px)
+{
+.btn1
+{
+border: none;
+outline: none;
+height: 40px;
+width: 50%;
+background-color: black;
+color: white;
+border-radius: 4px;
+font-weight: bold;
+}
+
+.form-control
+{
+width: 50%;
+height:40px;
+color: white;
+border-radius: 4px;
+font-weight: bold;
+}
+.button1
+{
+  margin-left:50%;
+  margin-top:0;
+
+}
+}
+ 
+</style>
+ </head>
+ <body>
+   <div style="display: flex;
+ justify-content: center;
+ margin-top:5%;
+ align-items: center;">
+   <div class="card" style="width: 60rem;">
+ <div class="card-body">
+
+   <div style="display:inline">
+<div class="first-box"style="background-color:black; float:left;width:50%;">
+ <!--<div class="container"> -->
+   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin:-15px;">
+     <!-- Indicators -->
+
+     <ol class="carousel-indicators">
+       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+       <li data-target="#myCarousel" data-slide-to="1"></li>
+       <li data-target="#myCarousel" data-slide-to="2"></li>
+     </ol>
+
+     <!-- Wrapper for slides -->
+     <div class="carousel-inner">
+       <div class="item active">
+         <img src="/img/image3.jpg" alt="Los Angeles" width="100%" height="100%">
+         <div class="carousel-caption">
+           <h3>Los Angeles</h3>
+           <p>LA is always so much fun!</p>
+         </div>
+       </div>
+
+       <div class="item">
+         <img src="/img/image2.jpg" alt="Chicago" width="100%" height="100%">
+         <div class="carousel-caption">
+           <h3>Chicago</h3>
+           <p>Thank you, Chicago!</p>
+         </div>
+       </div>
+
+       <div class="item">
+         <img src="/img/image1.jpg" alt="New York" width="100%" height="100%">
+         <div class="carousel-caption">
+           <h3>New York</h3>
+           <p>We love the Big Apple!</p>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ <!--</div> -->
+ </div>
+<div style="margin-left:50%;" class="font-background">
+ <button class="button" style="margin-left:20%;margin-top:25%;  border: 0;
+     outline: 0;" onclick="choice_signin();">Sign in</button>
+ <button class="button" style="margin-left:20%;margin-top:10%;  border: 0;
+     outline: 0;" onclick="choice();">Sign up</button>
+ <p style="font-family:georgia,garamond,serif;font-size:18px;font-style:italic;margin-left:50%;margin-top:5%;">Or Use</p>
+<div style="display:inline">  <button class="button1" style="margin-left:50%;margin-top:5%;  border: 0;
+     outline: 0;"onclick="location.href='/google'"><i class="fab fa-google"></i></button>
+ <button class="button1" style="margin-left:50%;margin-top:5%;  border: 0;
+     outline: 0;" onclick="location.href='/auth/facebook'"><i class="fab fa-facebook"></i></button>
+   </div>
+
+ </div>
+ </div>
+ </div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function choice()
+{
+  $(".font-background").fadeIn()
+  .css({top:50,position:'absolute',opacity:0.0})
+  .animate({top:10,opacity:1}, 800, function() {
+  });
+  $(".first-box").fadeIn()
+  .css({bottom:50,position:'relative',opacity:0.0})
+  .animate({top:1,opacity:1}, 800, function() {
+  });
+document.querySelector('.first-box').innerHTML =`<div style="background-color:white;"><span style="font-family:georgia,garamond,serif;font-size:18px;color:cornflowerblue;font-weight:bold;float:right; margin-right:0px;">I WANT</span>
+<div style="background-color:white;">
+<img src="/img/teacher.jpg" width="100%" height="300px" alt="teacher">
+</div>
+<!--Teacher signUp button-->
+<button href="#" class="btn btn-success btn-lg" style="margin-left:36%;;padding:8px;margin-top:70px;border-radius:20px;height:40px;width:100px;" onclick="location.href='/signup/newteacher'"><h4>Teacher</h4></button><div>`;
+document.querySelector('.font-background').innerHTML =`<span style="font-family:georgia,garamond,serif;font-size:18px;color:cornflowerblue;font-weight:bold;float:left;margin-left:0px;margin-top:3px;">TO</span>
+<img src="/img/student.png" width="100%" height="300px" alt="student">
+<!--Student signUp button-->
+<button href="#" class="btn btn-success btn-lg" style="margin-left:36%;;padding:8px;margin-top:70px;border-radius:20px;height:40px;width:100px;" onclick="location.href='/signup/newstudent'"><h4>Student</h4></button>`;
+}
+function choice_signin()
+{
+  $(".font-background").fadeIn()
+  .css({top:50,position:'absolute',opacity:0.0})
+  .animate({top:10,opacity:1}, 800, function() {
+  });
+  $(".first-box").fadeIn()
+  .css({bottom:50,position:'relative',opacity:0.0})
+  .animate({top:1,opacity:1}, 800, function() {
+  });
+document.querySelector('.first-box').innerHTML =`<div style="background-color:white;"><span style="font-family:georgia,garamond,serif;font-size:18px;color:cornflowerblue;font-weight:bold;float:right; margin-right:0px;">I WANT</span>
+<div style="background-color:white;">
+<img src="/img/teacher.jpg" width="100%" height="300px" alt="teacher">
+</div>
+<!--Teacher signin button-->
+<button href="#" class="btn btn-success" style="margin-left:36%;;padding:8px;margin-top:70px;border-radius:20px;height:40px;width:100px;" onclick="location.href='/signin/newteacher'"><h4>Teacher</h4></button><div>`;
+document.querySelector('.font-background').innerHTML =`<span style="font-family:georgia,garamond,serif;font-size:18px;color:cornflowerblue;font-weight:bold;float:left;margin-left:0px;margin-top:3px;">TO</span>
+<img src="/img/student.png" width="100%" height="300px" alt="student">
+<!--Student signin button-->
+<button href="#" class="btn btn-success" style="margin-left:36%;;padding:8px;margin-top:70px;border-radius:20px;height:40px;width:100px;" onclick="location.href='/signin/newstudent'"><h4>Student</h4></button>`;
+}
+document.querySelector('.button').onmousemove = function (e) {
+
+ var x = e.pageX - e.target.offsetLeft;
+ var y = e.pageY - e.target.offsetTop;
+
+ e.target.style.setProperty('--x', x + 'px');
+ e.target.style.setProperty('--y', y + 'px');
+};
+// java script signin (TODO:-edit the html code)
+function gotoSignIn(type)
+{
+   document.querySelector('.card-body').innerHTML=`<div class="container">
+    <div class="row no-gutters">
+   <div class="col-lg-7 px-5 pt-5">
+
+    <p style="font-family:georgia,garamond,serif;font-size:22px;font-style:italic;color:#9370DB;text-transform:uppercase;">Sign in</p>
+   <form method="post" action="/singin/${type}">
+     <div class="form-row">
+     <div class="col-lg-7">
+     <input type="email" placeholder="Email-Address" class="form-control  my-3 p-2" name="uemail">
+     </div>
+     </div>
+
+      <div class="form-row">
+       <div class="col-lg-7">
+       <input type="password" placeholder="*****" class="form-control  my-3 p-2" name="upassword">
+       </div>
+       </div>
+       <div class="form-row">
+       <div class="col-lg-7">
+       <button type="submit" class="btn1 mt-3 mb-5">Sign in</button>
+       </div>
+       </div>
+
+   </form>
+   </div>
+   </div>
+   </div>`;
+}
+//java script signup (TODO:-edit the html code)
+function gotoSignUp(type)
+{
+ document.querySelector('.card-body').innerHTML =`<div class="container">
+  <div class="row no-gutters">
+ <div class="col-lg-7 px-5 pt-5" style="margin-bottom:-11px;">
+
+  <p style="font-family:georgia,garamond,serif;font-size:22px;font-style:italic;color:#9370DB;text-transform:uppercase;">Sign up</p>
+ <form method="post" action="/signup/${type}">
+   <div class="form-row">
+   <div class="col-lg-7">
+   <input type="email" placeholder="Email-Address" class="form-control my-3 p-2" name="email">
+   </div>
+   </div>
+
+     <div class="form-row">
+     <div class="col-lg-7">
+     <input type="text" placeholder="Name" class="form-control my-3 p-2" name="name">
+     </div>
+     </div>
+
+                 <div class="form-row">
+   <div class="col-lg-7">
+   <input type="text" placeholder="City" class="form-control my-3 p-2 mt-20" name="city">
+   </div>
+   </div>
+
+                <div class="form-row">
+   <div class="col-lg-7">
+   <input type="text" placeholder="School" class="form-control my-3 p-2" name="school">
+   </div>
+   </div>
+
+     <div class="form-row">
+     <div class="col-lg-7">
+     <input type="password" placeholder="*****" class="form-control my-3 p-2" name="password">
+     </div>
+     </div>
+
+   <div class="form-row">
+       <div class="col-lg-7">
+       <input type="text" placeholder="Phone-number" class="form-control my-3 p-2" name="phone">
+       </div>
+       </div>
+
+     <div class="form-row">
+     <div class="col-lg-7">
+     <button type="submit" class="btn1 mt-3 mb-5">Sign up</button>
+     </div>
+     </div>
+
+ </form>
+ </div>
+ </div>
+ </div>`
+}
+</script>
+ </body>
+</html>

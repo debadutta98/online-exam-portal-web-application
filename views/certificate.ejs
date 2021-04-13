@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="/css/certificate.css" rel = "stylesheet">
+    <script src="https://unpkg.com/pdf-lib"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script>
+    var info=<%-information%>
+    </script>
+  </head>
+  <body>
+    <span class="back">
+	<span>L</span>
+	<span>o</span>
+	<span>a</span>
+	<span>d</span>
+	<span>i</span>
+	<span>n</span>
+	<span>g</span>
+</span>
+    <iframe id="pdf" width="100%" height="100%" frameborder="0" style="display:none"></iframe>
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+
+<script src="/js/certificate.js"></script>
+</html>

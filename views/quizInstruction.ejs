@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="/css/quizInstruction.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .container
+  {
+  justify-content:center;
+  padding-left:300px;
+  }
+  body
+  {
+  background-color:lightgray;
+  }
+  @media only screen and (max-width:700px)
+  {
+  .panel-heading
+  {
+  width:100%;
+  background:violet;
+  position:absolute;
+  top:75px;
+  right:0;
+  z-index:2;
+  }
+  }
+  </style>
+
+
+
+</head>
+
+<body>
+  <div class="container">
+    <!--left side-->
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+
+        <div class="panel panel-default">
+          <div class="panel-heading text-center" style="background-color:violet;">
+            <h4>Quiz Test Information</h4>
+          </div>
+          <div class="panel-body">
+            <div class="box box-info">
+              <div class="box-body">
+                <div class="col-sm-6">
+                  <div align="center">
+                    <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive" />
+                  </div>
+                  <br />
+                </div>
+                <div class="col-sm-6">
+                  <h4 style="color:#00b1b1;" id="user-name">Vikash Kumar</h4>
+                  <span>
+                    <p>Aspirant</p>
+                  </span>
+                </div>
+                <div class="clearfix"></div>
+                <hr style="margin:5px 0 5px 0;" />
+                <div class="col-sm-5 col-xs-6 tital ">Quiz Name:</div>
+                <div class="col-sm-7 col-xs-6 "><%=quizname%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">No of Question:</div>
+                <div class="col-sm-7"> <%=noquestion%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">Total Marks:</div>
+                <div class="col-sm-7"><%=mark%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">Date:</div>
+                <div class="col-sm-7"><%=datetime%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">Quiz Start:</div>
+                <div class="col-sm-7"><%=starttime%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">Quiz End:</div>
+                <div class="col-sm-7"><%=endtime%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">Duration:</div>
+                <div class="col-sm-7"><%=duration%></div>
+                <div class="clearfix"></div>
+                <div class="bot-border"></div>
+                <div class="col-sm-5 col-xs-6 tital ">
+
+                  <button type="button" class="btn btn-info" id="start">Next</button>
+
+                </div>
+                <div class="col-sm-7">
+                  <button type="button" class="btn btn-danger" id="cancel">Back</button>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+
+      <div class="col-xs-6 col-sm-6 col-md-6" style="margin-left:-35px;">
+        <!--right side-->
+
+        <div class="card mb-4 border-left-0" style="height:491px;padding-left:-20px;">
+          <div class="card-header text-center" style="padding:9.5px; background-color:violet;">
+            <h4>Quiz Instruction</h4>
+          </div>
+          <div class="card-body">
+            <p class="card-text">1.The quizzes consists of MCQ's questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module.</p>
+            <p class="card-text">2.Each question in the quiz is of multiple-choice or "true or false" format. Read each question carefully, and click on the button next to your response that is based on the information covered on the topic in the
+              module. Each correct or incorrect response will result in appropriate feedback immediately at the bottom of the screen.</p>
+            <p class="card-text">3.After responding to a question, click on the "Next Question" button at the bottom to go to the next questino. After responding to all the question, click on "Close" on the top of the window to exit the quiz.</p>
+            <p class="card-text">4.Once you select an incorrect response for a question, you can't go to the previous question.That means you can't retake the quiz, the questions.</p>
+             
+            <div class="form-check text-center">
+              <input class="form-check-input" type="checkbox" id="flexCheckChecked">
+              <label class="form-check-label" for="flexCheckChecked">
+                &nbsp &nbsp I have read all the Instruction
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <script src="/js/quizInstruction.js" type="text/javascript"></script>
+</body>
+
+</html>

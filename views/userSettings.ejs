@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+  body{
+  background:lightgray;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container rounded bg-white mt-5">
+      <div class="row">
+          <div class="col-md-4 border-right">
+              <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://bootdey.com/img/Content/avatar/avatar7.png" width="90">
+                <span class="font-weight-bold" id="name">Vikash Kumar</span>
+                <span class="text-black-50" id="email">vk421706@gmail.com</span>
+                <span id="location">India Bihar</span></div>
+          </div>
+          <div class="col-md-8">
+              <div class="p-3 py-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                      <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                          <h6>Back to home</h6>
+                      </div>
+                      <h6 class="text-right">Edit Profile</h6>
+                  </div>
+                  <form action="/teacher/settings/save" method="post">
+                  <div class="row mt-2">
+                      <div class="col-md-6"><input type="text" class="form-control" placeholder="First name" name="firstname"></div>
+                      <div class="col-md-6"><input type="text" class="form-control" placeholder="Last name" name="lastname"></div>
+                  </div>
+
+                  <div class="row mt-3">
+                      <div class="col-md-6"><input type="text" class="form-control" placeholder="address" name="address"></div>
+                      <div class="col-md-6"><input type="text" class="form-control" placeholder="Country" name="country"></div>
+                  </div>
+                  <div class="row mt-3">
+                      <div class="col-md-6"><input type="text" class="form-control" placeholder="Working Location" name="working"></div>
+  <div class="col-md-6"><input type="text" class="form-control" name='phone' placeholder="Phone" size="10"></div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-6 ">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="male" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1" >Male</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="female" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">Female</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="trans" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">Other</label>
+
+  </div>
+
+  </div>
+                  <div class="mt-5 ml-auto"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+    <script type="text/javascript">
+      var json_info = <%-userinfo %>
+        if (typeof(json_info) !== 'undefined') {
+          var jsonobj;
+          if (typeof(json_info) === 'string') {
+            jsonobj = JSON.parse(json_info);
+          }
+          if (typeof(json_info) === 'object') {
+          jsonobj =json_info;
+          }
+          if(typeof(jsonobj) !== 'undefined')
+          {
+            $('#name').text(jsonobj.name);
+            $('#email').text(jsonobj.email);
+            if(typeof(jsonobj.city)!==null & typeof(jsonobj.city)!=='' && typeof(jsonobj.city)!=='undefined')
+            $('#location').text(jsonobj.city);
+            $('.rounded-circle').attr('src',jsonobj.image);
+            if(jsonobj.type==='student')
+            {
+               $("#change").attr('placeholder',"School Location");
+               $('form').attr('action',`/student/settings/save`);
+            }
+          }
+        }
+    </script>
+</body>
+
+</html>

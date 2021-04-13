@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link href="/css/teacherstyle.css" rel="stylesheet" type="text/css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+
+      (function($) {
+
+        $('#filter').keyup(function() {
+
+          var rex = new RegExp($(this).val(), 'i');
+          $('.searchable tr').hide();
+          $('.searchable tr').filter(function() {
+            return rex.test($(this).text());
+          }).show();
+
+        })
+
+      }(jQuery));
+
+    });
+  </script>
+  <style>
+.btn1
+{
+  height:35px;
+  width:100px; 
+ 
+}
+.head
+{
+height:60%;
+}
+</style>
+</head>
+  <%- include('header'); -%>
+<body style="background-color:lightgray;">
+  <div class="main justify-content-center ">
+    <div class="form-group has-search">
+     <input type="text" class="form-control" placeholder="Search quiz" id="filter">
+      <span class="form-control-feedback"></span>
+      
+
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="table-responsive">
+
+          <table class="table table-hover">
+            <thead class="head thead-dark">
+
+              <tr>
+                <th scope="col"><h5>SL no</h5></th>
+                <th scope="col"><h5>Quiz Name</h5></th>
+                <th scope="col"><h5>Maximum Student<h5></th>
+                <th scope="col"><h5>Appear Student<h5></th>
+                <th scope="col"><h5>Marks</h5></th>
+                <th scope="col"><h5>Duration</h5></th>
+                <th scope="col"></h5>Test Link</h5></th>
+                <th scope="col"><h5>Create Quiz</h5></th>
+                <th scope="col"><h5>Delete<h5></th>
+                <th scope="col"><h5>Marksheet</h5></th>
+              </tr>
+            </thead>
+            <tbody class="searchable">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <button class="btn1 btn-info btn-lg" id="add"><i class="fas fa-plus-circle"></i>&nbsp;Add Quiz</button>
+    </div>
+    <script>
+      var i = 0;
+
+      function quizeId() {
+        ++i;
+      }
+
+      function tbodyAppend(j) {
+        var html = `<tr id='tr${j}'>
+    <td scope="row" style="text-align:center;padding-top:21px;"><b>${j}</b></td>
+    <td id="quizname${j}"style="text-align:center;padding-top:21px;"><b>Quiz${j}</b></td>
+    <td id="maxstd${j}"style="text-align:center;padding-top:21px;"><b>0</b></td>
+    <td id="apperstd${j}"style="text-align:center;padding-top:21px;"><b>0</b></td>
+    <td id="mark${j}"style="text-align:center;padding-top:21px;"><b>0</b></td>
+    <td id="duration${j}"style="text-align:center;padding-top:21px;"><b>0</b></td>
+    <td style="text-align:center;padding-top:21px;">
+      <p id="copytext${j}" style="display:none;"></p>
+&nbsp;&nbsp;<i class="far fa-copy" onclick="copy('copytext${j}')" data-toggle="tooltip" data-placement="top" title="Copy link"></i>
+    </td>
+    <td>
+      <button type="button" class="btn btn-dark" id="create-quiz${j}" onclick="set('edit',${j});"><i class="far fa-edit"></i></button></td>
+    <td style="text-align:center;">
+      <button type="button" class="btn btn-danger" id="delete${j}" onclick="set('delete',${j});"><i class="fa fa-trash-alt"></i></button>
+    </td>
+    <td>
+       &nbsp;<button type="button" class="btn btn-warning" id="std-mark-sheet${j}" onclick="set('marksheet',${j});" disabled><i class="fa fa-eye"></i></button>
+    </td>
+    </td>
+ </tr>`;
+        return html;
+      }
+      $("#add").on("click", function() {
+        quizeId()
+        var html = tbodyAppend(i);
+        $("tbody").append(html);
+      })
+
+      function copy(id) {
+        var value = window.location.protocol+"//"+window.location.hostname+'/student/add?id='+document.getElementById(id).innerHTML;
+        var input_temp = document.createElement("input");
+        input_temp.value = value;
+        document.body.appendChild(input_temp);
+        input_temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(input_temp);
+      }
+
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+      function set(event1, pos)
+      {
+      var id=$('#copytext'+pos).text();
+        setCookie('buttonclick', JSON.stringify({
+          event: event1 ,
+          position: pos ,
+          quizid: String(id)
+        }), 1);
+        if (event1 === 'edit' && String(id )==='')
+        {
+          window.location.href = window.location.href + `/createquiz`;
+        }
+         else if (event1 === 'edit' && String(id)!=="") {
+          window.location.href = window.location.href + `/createquiz/${String(id)}`;
+        }
+        if (event1 === 'examroom' && String(id ) !== '') {
+          window.location.href = window.location.href + `/examroom/${String(id)}`;
+        }
+        if (event1 === 'delete' && String(id ) === '') {
+          $('tbody').find('#tr' + pos).remove();
+        }
+         else if (event1 === 'delete' && String(id ) !== '')
+         {
+          window.location.href = window.location.href + `/delete/${String(id )}`;
+        }
+        if (event1 === 'marksheet' && String(id ) !== '') {
+          window.location.href = window.location.href + `/marksheet/${String(id )}`;
+        }
+      }
+      function attach(name, appear, quizid, maxstudent, mark, duration, pos) {
+        var html = `<tr>
+      <td scope="row" style="text-align:center;padding-top:21px;"><b>${pos}</b></td>
+      <td id="quizname${pos}"style="text-align:center;padding-top:21px;"><b>${name}</b></td>
+      <td id="maxstd${pos}"style="text-align:center;padding-top:21px;"><b>${maxstudent}</b></td>
+      <td id="apperstd${pos}"style="text-align:center;padding-top:21px;"><b>${appear}</b></td>
+      <td id="mark${pos}"style="text-align:center;padding-top:21px;"><b>${mark}</b></td>
+      <td id="duration${pos}"style="text-align:center;padding-top:21px;"><b>${duration}</b></td>
+      <td style="text-align:center;padding-top:21px;">
+        <p id="copytext${pos}" style="display:none;">${quizid}</p>
+  &nbsp;&nbsp;<i class="far fa-copy" onclick="copy('copytext${pos}')" data-toggle="tooltip" data-placement="top" title="Copy link"></i>
+      </td>
+      <td>
+        <button type="button" class="btn btn-dark" id="create-quiz${pos}" onclick="set('edit',${pos});" disabled><i class="far fa-edit"></i></button></td>
+      <td style="text-align:center;">
+        <button type="button" class="btn btn-danger" id="delete${pos}" onclick="set('delete',${pos});"><i class="fa fa-trash-alt"></i></button>
+      </td>
+      <td>
+         &nbsp;<button type="button" class="btn btn-warning" id="std-mark-sheet${pos}" onclick="set('marksheet',${pos});"><i class="fa fa-eye"></i></button>
+      </td>
+      </td>
+   </tr>`
+        $("tbody").append(html);
+      }
+      var quiz_update = <%-quiz_json%> ;
+      if (typeof quiz_update === 'object') {
+        quizupdate = quiz_update;
+      } else if (typeof quiz_update === 'string') {
+        quizupdate = JSON.parse(quiz_update);
+      }
+      if (quizupdate.length > 0) {
+          i=quizupdate.length;
+        var c = 1;
+        quizupdate.forEach(function(value) {
+          attach(value.name, value.appear_len, value.id, value.maxstudent, value.mark, value.duration, c);
+          c++;
+        })
+      }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <style type="text/css">
+    .table-content {
+            width: 550px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        td {
+            width: 500px;
+        }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body{
+  background: lightgray;
+  }
+.head
+{
+height:60%;
+}
+.btnn{
+text-align: center;
+}
+#piechart
+{
+text-align: center;
+}
+  </style>
+</head>
+
+<body>
+<div class="container">
+       <div class="row">
+        <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="head thead-dark">
+          <tr>
+          <th scope="col"><h5> SL No. </h5></th>
+          <th scope="col"><h5>Name Of Student</h5></th>
+          <th scope="col"><h5>Email Id</h5></th>
+          <th scope="col"><h5>Total Mark</h5></th>
+          <th scope="col"><h5>Marks</h5></th>
+          <th scope="col"><h5>Presentage</h5></th>
+          <th scope="col"><h5>Grade</h5></th>
+          <th scope="col"><h5>Status</h5></th>
+        </tr>
+           </thead>
+          </tbody>
+        </table>
+        <div class="btnn">
+    <button class="btn btn-success" id="add"><span class="glyphicon glyphicon-cancel-sign"></span>Convert To Sheet</button> 
+    </div>
+    <div id="piechart" style="width: 1120px; height: 530px;"></div>
+  </div>
+  </div>
+      </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+  var markobj=<%-markjson%>
+  </script>
+  <script src="/js/MarkSheet.js"></script>
+</body>
+
+</html>
