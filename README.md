@@ -5,6 +5,8 @@ N.B:
 
 for now google and facebook authentication is not working because we did not update the callback url in developer console but it works in [localhost](http://localhost:3000)
 
+You can test it using normal user authentication (signn/signup)
+
 This application is live on heroku 
 
 you can see it by going to this [link](https://quiz-dev-vik.herokuapp.com)
